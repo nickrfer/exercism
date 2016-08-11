@@ -1,10 +1,13 @@
 public class HelloWorld {
 
-  public static String hello(String name) {
-    if (name == null || name.equals("")) {
-      return "Hello, World!";
-    }
+	private static final String FORMAT_HELLO = "Hello, %s!";
+	
+	public static String hello(String name) {
+		String helloName = name;
+		if (helloName == null || helloName.equals("")) {
+			helloName = "World";
+		}
 
-    return "Hello, " + name + "!";
-  }
+		return String.format(FORMAT_HELLO, helloName);
+	}
 }
